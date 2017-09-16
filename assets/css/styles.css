@@ -2,6 +2,7 @@
 
 Green: #79b044
 Salmon: #dd5638
+Blue: #2980b9
 Blue Gray: #3e4249
 
 */
@@ -125,6 +126,14 @@ blockquote:before {
 	display: none;
 }
 
+/* == NAVBAR == */
+
+.navbar-brand>img {
+	display: inline;
+	width: 100%;
+	margin-right: .5em;
+}
+
 /* == HERO == */
 
 #hero {
@@ -147,10 +156,8 @@ blockquote:before {
 	margin-bottom: 50px;
 }
 
-@media screen && (min-width:768px) {
-	#hero .hero-img {
-		max-width: 400px;
-	}
+.logo {
+	max-width: 28px;
 }
 
 #price-timeline {
@@ -221,4 +228,47 @@ section h2 {
 
 section h3 {
 	margin: 30px 0 10px;
+}
+
+#primary {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#optin {
+	background: #3e4249;
+	padding: 20px 0;
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	font-size: 1.2em;
+}
+
+#optin p {
+	margin: 7px 0 0 0;
+}
+
+/* ==== MEDIA QUERIES === */
+
+@media screen and ( max-width : 991px ) {
+
+	#instructor .container {
+		background: rgba(255,255,255,0.8);
+		padding: 20px;
+	}
+}
+
+@media screen and ( max-width: 768px ) {
+
+	#optin p {
+		margin: 0 0 10px;
+	}
+
+	#featurette iframe {
+		height: 240px;
+	}
+}
+
+@media screen and ( max-width: 568px ) {
+
 }
