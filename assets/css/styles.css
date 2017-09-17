@@ -86,6 +86,18 @@ button.btn:focus {
 	border: #6a9b3d;
 }
 
+.btn-outline-danger {
+	background-color: none;
+	border: solid 1px #dd5638;
+	//color: #dd5638 !important;
+}
+
+.btn-outline-danger:hover {
+	background-color: #dd5638;
+	border: solid 1px #dd5638;
+	color: white !important;
+}
+
 img {
 	max-width: 100%;
 }
@@ -132,6 +144,7 @@ blockquote:before {
 	display: inline;
 	width: 100%;
 	margin-right: .5em;
+	margin-top: -.15em;
 }
 
 /* == HERO == */
@@ -247,6 +260,38 @@ section h3 {
 #optin p {
 	margin: 7px 0 0 0;
 }
+
+#skills {
+	background: white;
+}
+
+footer {
+	background: #3e4249;
+	color: white;
+	padding: 20px 0 10px;
+	font-size: 12px;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer a:link, footer a:visited {
+	color: white;
+}
+
+footer a:hover {
+	color: #dd5638;
+}
+
+footer li.signup-link a {
+	color: #dd5638;
+}
+
+footer li.signup-link a:hover {
+	font-weight: bold;
+}
+
 
 /* ==== MEDIA QUERIES === */
 
