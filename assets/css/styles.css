@@ -1,9 +1,13 @@
-/* Color References
+/* 
 
-Green: #79b044
-Salmon: #dd5638
-Blue: #2980b9
-Blue Gray: #3e4249
+Palette: 
+#fbd33d - light yellow
+#eeba21 - dark yellow
+#ff5a5f - pink
+#e85155 - dark pink
+#00d0c3 - turquoise 
+#007887 - dark greenish blue
+#006e7a - darkest green
 
 */
 
@@ -49,12 +53,12 @@ p.lead {
 }
 
 a:link, a:visited {
-	color: #dd5638;
+	color: #ff595e;
 }
 
 a:hover {
 	text-decoration: none;
-	color: #c9302c;
+	color: #d64448;
 }
 
 button, input, .btn, a.btn {
@@ -72,18 +76,18 @@ button.btn:focus {
 }
 
 .btn-danger {
-	background-color: #dd5639;
-	border-color: #d95131;
+	background-color: #ff595e;
+	border-color: #ff595e;
 }
 
 .btn-success {
-	background: #79b044;
+	background: #eeba21;
 	border: none;
 }
 
 .btn-success:hover {
-	background: #6a9b3d;
-	border: #6a9b3d;
+	background: #d8a81c;
+	border: #d8a81c;
 }
 
 .btn-outline-danger {
@@ -92,9 +96,10 @@ button.btn:focus {
 	//color: #dd5638 !important;
 }
 
+.btn-danger:hover,
 .btn-outline-danger:hover {
-	background-color: #dd5638;
-	border: solid 1px #dd5638;
+	background-color: #e85155;
+	border: solid 1px #e85155;
 	color: white !important;
 }
 
@@ -136,6 +141,10 @@ blockquote cite {
 
 blockquote:before {
 	display: none;
+}
+
+.svg-header {
+	max-width: 140px;
 }
 
 /* == NAVBAR == */
@@ -189,7 +198,7 @@ blockquote:before {
 }
 
 #price-timeline .price.active {
-	background: #dd5638;
+	background: #ff595e;
 }
 
 #price-timeline .price span {
@@ -265,6 +274,16 @@ section h3 {
 	background: white;
 }
 
+#course-features {
+	background: #3e4249;
+	color: white;
+	text-align: center;
+}
+
+#project-features {
+	text-align: center;
+}
+
 footer {
 	background: #3e4249;
 	color: white;
@@ -281,11 +300,11 @@ footer a:link, footer a:visited {
 }
 
 footer a:hover {
-	color: #dd5638;
+	color: #e85155;
 }
 
 footer li.signup-link a {
-	color: #dd5638;
+	color: #ff595e;
 }
 
 footer li.signup-link a:hover {
