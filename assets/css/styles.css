@@ -82,14 +82,14 @@ button.btn:focus {
 
 .btn-success,
 .btn-success:active {
-	background: #eeba21;
+	background: #00d0c3;
 	border: none;
 }
 
 .btn-success:hover,
 .btn-success:focus {
-	background: #fbd33d;
-	border: #fbd33d;
+	background: #007887;
+	border: #007887;
 }
 
 .btn-outline-danger {
@@ -304,6 +304,97 @@ section h3 {
 	max-width: 220px;
 }
 
+#instructor {
+	background: white;
+}
+
+#instructor h2 {
+	margin: 0 0 20px;s
+}
+
+#instructor img {
+	display: block;
+	margin: 0 auto;
+}
+
+#instructor .num {
+	display: table;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	line-height: 24px;
+	height: 140px;
+	width: 140px;
+	text-align: center;
+	background: #007887;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+#instructor .num .num-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#instructor .num span {
+	display: block;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#testimonial {
+	text-align: center;
+}
+
+.testimonial {
+	margin-bottom: 60px;
+}
+
+#signup {
+	text-align: center;
+	background: white;
+	background-size: 150%;
+	color: #444;
+}
+
+#signup .btn {
+	background-color: #ff5a5f;
+}
+
+input:focus {
+	outline: none;
+}
+
+.badge.social {
+	background: #ccc;
+	font-size: 24px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 42px;
+	margin: 0 5px 20px 0;
+	padding: 0;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	color: white;
+}
+
+.badge.social.twitter:hover {
+	background: #55acee;
+}
+
+.badge.social.facebook:hover {
+	background: #3b5998;
+}
+
+.badge.social.amazon:hover {
+	background: #ff9900;
+}
+
 footer {
 	background: #3e4249;
 	color: white;
@@ -353,11 +444,9 @@ i.ci {
 
 @media screen and ( max-width : 991px ) {
 
-	#instructor .container {
-		background: rgba(255,255,255,0.8);
-		padding: 20px;
+	#instructor img {
+		border-radius: 50%;
 	}
-
 
 	#featurette iframe {
 		height: 240px;
@@ -365,7 +454,14 @@ i.ci {
 
 }
 
-@media screen and ( max-width: 768px ) {
+@media screen and ( max-width: 767px ) {
+
+	#instructor img {
+		//padding-top: 2em;
+		border-radius: 0;
+		display: block;
+		margin: 1.5em auto;
+	}
 
 	#optin p {
 		margin: 0 0 10px;
@@ -377,6 +473,7 @@ i.ci {
 }
 
 @media screen and ( max-width: 568px ) {
+
 	.svg-avatar {
 		max-width: 200px;
 		margin-bottom: 15px;
