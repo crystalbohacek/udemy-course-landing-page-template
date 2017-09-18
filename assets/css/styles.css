@@ -68,6 +68,7 @@ button, input, .btn, a.btn {
 }
 
 .btn {
+	transition: all .2s ease;
 	font-weight: bold;
 }
 
@@ -88,20 +89,19 @@ button.btn:focus {
 
 .btn-success:hover,
 .btn-success:focus {
-	background: #007887;
-	border: #007887;
+	background: #00e2d4;
+	border: #00e2d4;
 }
 
 .btn-outline-danger {
 	background-color: none;
 	border: solid 1px #dd5638;
-	//color: #dd5638 !important;
 }
 
 .btn-danger:hover,
 .btn-outline-danger:hover {
-	background-color: #e85155;
-	border: solid 1px #e85155;
+	background-color: #ff3f46;
+	border: solid 1px #ff3f46;
 	color: white !important;
 }
 
@@ -360,12 +360,14 @@ section h3 {
 	color: #444;
 }
 
-#signup .btn {
-	background-color: #ff5a5f;
-}
+// #signup .btn {
+// 	background-color: #ff5a5f;
+// }
 
-input:focus {
-	outline: none;
+.form-control:focus {
+  border-color: #888;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .badge.social {
