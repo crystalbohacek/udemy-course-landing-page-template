@@ -80,14 +80,16 @@ button.btn:focus {
 	border-color: #ff595e;
 }
 
-.btn-success {
+.btn-success,
+.btn-success:active {
 	background: #eeba21;
 	border: none;
 }
 
-.btn-success:hover {
-	background: #d8a81c;
-	border: #d8a81c;
+.btn-success:hover,
+.btn-success:focus {
+	background: #fbd33d;
+	border: #fbd33d;
 }
 
 .btn-outline-danger {
@@ -284,6 +286,24 @@ section h3 {
 	text-align: center;
 }
 
+#featurette {
+	background-color: white;
+	background-size: cover;
+	text-align: center;
+}
+
+#testimonials {
+	text-align: center;
+}
+
+.testimonial {
+	margin-bottom: 60px;
+}
+
+.svg-avatar {
+	max-width: 220px;
+}
+
 footer {
 	background: #3e4249;
 	color: white;
@@ -311,6 +331,23 @@ footer li.signup-link a:hover {
 	font-weight: bold;
 }
 
+/*=== CUSTOM ICON SPRITES ===*/
+
+i.ci {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background: url('../img/icon-sprite.png') no-repeat;
+}
+
+.ci.ci-computer		{ background-position: 0 0; }
+.ci.ci-watch		{ background-position: -40px 0; }
+.ci.ci-calendar		{ background-position: -80px 0; }
+.ci.ci-community	{ background-position: -120px 0; }
+.ci.ci-instructor	{ background-position: -160px 0; }
+.ci.ci-device		{ background-position: -200px 0; }
+
+
 
 /* ==== MEDIA QUERIES === */
 
@@ -320,6 +357,12 @@ footer li.signup-link a:hover {
 		background: rgba(255,255,255,0.8);
 		padding: 20px;
 	}
+
+
+	#featurette iframe {
+		height: 240px;
+	}
+
 }
 
 @media screen and ( max-width: 768px ) {
@@ -328,11 +371,14 @@ footer li.signup-link a:hover {
 		margin: 0 0 10px;
 	}
 
-	#featurette iframe {
-		height: 240px;
+	.svg-avatar {
+		margin-bottom: 20px;
 	}
 }
 
 @media screen and ( max-width: 568px ) {
-
+	.svg-avatar {
+		max-width: 200px;
+		margin-bottom: 15px;
+	}
 }
