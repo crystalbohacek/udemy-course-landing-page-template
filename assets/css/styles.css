@@ -452,9 +452,12 @@ footer li.signup-link a:hover {
 }
 
 .post header,
-.post .post-body,
 #comments .comments-wrap {
 	padding: 20px 20px 0 20px;
+}
+
+.post .post-body {
+	padding: 0 20px 0 20px;
 }
 
 .post .post-excerpt {
@@ -633,6 +636,31 @@ footer li.signup-link a:hover {
 	margin: 40px 0 0;
 	padding: 20px 0 0;
 	border-top: solid 1px #eee;
+}
+
+/* === FORMS === */
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 6px 12px;
 }
 
 
