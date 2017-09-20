@@ -654,6 +654,14 @@ footer li.signup-link a:hover {
 	margin-right: 0;
 }
 
+/* == CONTACT == */
+
+.contact-form {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
 /* === FORMS === */
 
 label {
