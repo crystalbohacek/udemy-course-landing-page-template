@@ -11,24 +11,90 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bestsellerbootcamp' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'bestsellerbootcamp' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bestsellerbootcamp' ), 'bestsellerbootcamp', '<a href="http://crystalbohacek.com/">C Bohacek</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
+
+	<!-- SIGN UP -->
+	<section id="signup" data-type="background" data-speed="4">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h3>Become a published author in 4 weeks and earn $1k+ per month.</h3>
+				</div><!--end col-->
+				<div class="col-sm-6 col-sm-offset-3">
+					<p>Sign up for our mailing list and we’ll show you what Bestseller Bootcamp can do to help change your career. We will never spam you.</p>
+				</div><!--end col-->
+			  <div class="col-sm-4 col-sm-offset-4">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Enter Your Email">
+			      <span class="input-group-btn">
+			        <button class="btn btn-danger" type="button"><i class="fa fa-angle-right"></i></button>
+			      </span><!--input-group-btn-->
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-sm-4 -->
+			</div><!-- /.row -->			
+		</div><!--container-->
+	</section><!--signup-->
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="container">
+			<div class="col-sm-3">
+				<a href="/"><span class="hidden-sm hidden-xs">Bestseller Bootcamp</span></a>
+			</div><!--end col-->
+			<div class="col-sm-6">
+				<nav>
+					<ul class="list-unstyled list-inline">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Resources</a></li>
+						<li><a href="#">Contact</a></li>
+						<li class="signup-link"><a href="#">Signup Now</a></li>
+					</ul>
+				</nav>
+			</div><!--end col-->
+			<div class="col-sm-3">
+				<p class="pull-right">&copy; 2017</p>
+
+			</div><!--col-->
+		</div><!--container -->
+	</footer>
+
+	<!-- MODAL -->
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span>&times;<span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-envelope"></i> Subscribe To Our Mailing List</h4>
+				</div><!-- modal-header -->
+				<div class="modal-body">
+					<p>Simply enter your name and email. As a thank you for joining us, we're going to give you one of our best selling courses <em>for free!</em></p>
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<label class="sr-only" for="subscribe-name">Your first name</label>
+							<input type="text" class="form-control" id="subscribe-name" placeholder="Your first name">
+						</div><!--form group-->
+						<div class="form-group">
+							<label class="sr-only" for="subscribe-email">Your email</label>
+							<input type="text" class="form-control" id="subscribe-email" placeholder="and your email">
+						</div><!--form group-->
+						<input type="submit" class="btn btn-danger" value="Subscribe">
+					</form>
+
+					<hr>
+
+					<p><small>By providing your email, you consent to receiving occasional newsletters.<br>No spam. Just good stuff. We respect your privacy &amp; you may unsubscribe at any time.</small></p>
+				</div><!-- modal-body-->
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+
+<!-- BOOTSTRAP CORE JAVASCRIPT -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery-3.2.1.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
+
 
 </body>
 </html>

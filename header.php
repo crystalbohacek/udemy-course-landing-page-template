@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -49,7 +49,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><img src="assets/img/logo-badge.svg" class="logo" alt="Bestseller Bootcamp"><span class="hidden-xs">Bestseller Bootcamp</span></a>
+						<a class="navbar-brand" href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.svg" class="logo" alt="Bestseller Bootcamp"><span class="hidden-xs">Bestseller Bootcamp</span></a>
 					</div><!--navbar header-->
 
 					<?php
