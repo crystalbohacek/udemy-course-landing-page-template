@@ -4,7 +4,7 @@
 	Template Name: Home
 */
 
-// Custom Fields 
+//Custom Fields 
 $prelaunch_price	= get_post_meta( 7, 'prelaunch_price', true );
 $launch_price		= get_post_meta( 7, 'launch_price', true );
 $final_price		= get_post_meta( 7, 'final_price', true );
@@ -13,6 +13,21 @@ $button_1_text		= get_post_meta( 7, 'button_1_text', true );
 $button_2_text		= get_post_meta( 7, 'button_2_text', true );
 $optin_text			= get_post_meta( 7, 'optin_text', true );
 $optin_button_text	= get_post_meta( 7, 'optin_button_text', true );
+
+//Advanced Custom Fields
+
+$income_feature_image 		= get_field('income_feature_image');
+$income_section_title 		= get_field('income_section_title');
+$income_section_desc 		= get_field('income_section_description');
+$left_column_title 			= get_field('left_column_title');
+$left_column_description 	= get_field('left_column_description');
+$right_column_title 		= get_field('right_column_title');
+$right_column_title 		= get_field('right_column_title');
+$right_column_description 	= get_field('right_column_description');
+
+$skills_feature_image		= get_field('skills_feature_image');
+$skills_section_title 		= get_field('skills_section_title');
+$skills_section_body		= get_field('skills_section_body');
 
 get_header(); ?>
 
@@ -67,22 +82,30 @@ get_header(); ?>
 	<!-- BOOST YOUR INCOME -->
 	<section id="boost-income">
 		<div class="container">
-			
+		
 			<div class="section-header">
-				<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-chart.svg" alt="Chart">
-				<h2>How You Can Boost Your Income</h2>
+			
+			<!-- Feature Image Logic -->
+
+				<?php if(!empty($income_feature_image)){ ?>
+				
+					<img class="svg-header" src="<?php echo $income_feature_image['url']; ?>" alt="<?php echo $income_feature_image['alt'] ?>">
+				
+				<?php }; ?>
+
+				<h2><?php echo $income_section_title; ?></h2>
 			</div><!--section-header-->
 
-			<p class="lead">How would your <strong>life change</strong> if you were a best selling author? Whether you&rsquo;ve written many books or haven't written a single page (or have no idea what you'll write) — this course gives you an immensely valuable skill that will enable you to either:</p>
+			<p class="lead"><?php echo $income_section_description; ?></p>
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3>Make money on the side</h3>
-					<p>Pubish part-time and receive book royalties so you can save up for that Hawaiian vacation you’ve been wanting, help pay off your debt, your car, your mortgage, or simply just to have bonus cash laying around.</p>
+					<h3><?php echo $left_column_title ?></h3>
+					<p><?php echo $left_column_description ?></p>
 				</div><!-- col -->
 				<div class="col-sm-6">
-					<h3>Create a full-time income</h3>
-					<p>Learn the steps to finding a lucrataive writing niche, and build your authority within that niche that keeps readers coming back for more. Bestselling Bootcamp is the only all-in-one system guaranteed to guide you from blank page to bestseller.</p>
+					<h3><?php echo $right_column_title ?></h3>
+					<p><?php echo $right_column_description ?></p>
 				</div><!-- col -->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -92,8 +115,15 @@ get_header(); ?>
 	<section id="skills">
 		<div class="container">
 			<div class="section-header">
-				<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-think.svg" alt="Man thinking">
-				<h2>What Will You Learn?</h2>
+
+			<!-- Feature Image Logic -->
+				<?php if(!empty($skills_feature_image)){ ?>
+				
+					<img class="svg-header" src="<?php echo $skills_feature_image['url']; ?>" alt="<?php echo $skills_feature_image['alt'] ?>">
+				
+				<?php }; ?>
+
+				<h2><?php echo $skills_section_title; ?></h2>
 			</div><!--section-header-->
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
