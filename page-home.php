@@ -5,6 +5,7 @@
 */
 
 //Custom Fields 
+
 $prelaunch_price	= get_post_meta( 7, 'prelaunch_price', true );
 $launch_price		= get_post_meta( 7, 'launch_price', true );
 $final_price		= get_post_meta( 7, 'final_price', true );
@@ -13,8 +14,6 @@ $button_1_text		= get_post_meta( 7, 'button_1_text', true );
 $button_2_text		= get_post_meta( 7, 'button_2_text', true );
 $optin_text			= get_post_meta( 7, 'optin_text', true );
 $optin_button_text	= get_post_meta( 7, 'optin_button_text', true );
-
-//Advanced Custom Fields
 
 $income_feature_image 		= get_field('income_feature_image');
 $income_section_title 		= get_field('income_section_title');
@@ -28,6 +27,10 @@ $right_column_description 	= get_field('right_column_description');
 $skills_feature_image		= get_field('skills_feature_image');
 $skills_section_title 		= get_field('skills_section_title');
 $skills_section_body		= get_field('skills_section_body');
+
+$features_section_image		= get_field('features_section_image');
+$features_section_title		= get_field('features_section_title');
+
 
 get_header(); ?>
 
@@ -101,11 +104,11 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-6">
 					<h3><?php echo $left_column_title ?></h3>
-					<p><?php echo $left_column_description ?></p>
+					<p><?php echo $left_column_description; ?></p>
 				</div><!-- col -->
 				<div class="col-sm-6">
 					<h3><?php echo $right_column_title ?></h3>
-					<p><?php echo $right_column_description ?></p>
+					<p><?php echo $right_column_description; ?></p>
 				</div><!-- col -->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -127,19 +130,7 @@ get_header(); ?>
 			</div><!--section-header-->
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h3>Picking a Bestselling Topic</h3>
-					<p>This course will take you from beginner to expert in finding bestselling topics. </p>
-					<p>You will learn how to do market research, with our proven system for finding hot upcoming niches. You will learn how to identify your target audience and reach them everytime.</p>
-
-					<h3>Promotion Magic</h3>
-					<p>Discover the proven ways to promote your book to its target audience without spending any money.</p>
-					<p>This includes developing your author landing page, creating a killer cover design, finding the right keywords for your niche, and using guerilla marketing tactics to reach out to new readers.</p>
-
-					<h3>Successful Writing Habits</h3>
-					<p>Even if you have a great marketing strategy, you must also be a good writer if you want to hook a reader and have them return. We'll show you how to write compelling stories while setting productity goals and keeping yourself organized and motivated. </p>
-
-					<h3>Financial Management for Authors</h3>
-					<p>You will learn how to reduce your expenses by 80% or more as a self-published author so that you can keep more of your cash. It's important to know how to protect yourself from financial disasters that can strike authors who don't understand these fundamentals of financial protection.</p>
+					<?php echo $skills_section_body; ?>
 				</div>
 			</div>
 		</div><!--container-->
@@ -149,41 +140,30 @@ get_header(); ?>
 	<section id="course-features">
 		<div class="container">
 			<div class="section-header">
-				<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-features.svg" alt="Hand Picking Features">
-				<h2>Course Features</h2>
+
+			<!-- Feature Image Logic -->
+
+				<?php if(!empty($income_feature_image)){ ?>
+				
+					<img class="svg-header" src="<?php echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt'] ?>">
+				
+				<?php }; ?>
+
+				<h2><?php echo $features_section_title; ?></h2>
 			</div><!--section-header-->
 
 			<div class="row">
 
-				<div class="col-sm-2">
-					<i class="ci ci-computer"></i>
-					<h4>Lifetime Access to 45+ Lectures</h4>
-				</div><!--col-->
+				<?php $loop = new WP_Query( array( 'post_type' => 'course_feature', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
 
-				<div class="col-sm-2">
-					<i class="ci ci-watch"></i>
-					<h4>9+ hours of on-demand video</h4>
-				</div><!--col-->
+				<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-				<div class="col-sm-2">
-					<i class="ci ci-calendar"></i>
-					<h4>30 day money back guarantee</h4>
-				</div><!--col-->
+					<div class="col-sm-2">
+						<i class="<?php the_field('course_feature_icon'); ?>"></i>
+						<h4><?php the_title(); ?></h4>
+					</div><!--col-->
 
-				<div class="col-sm-2">
-					<i class="ci ci-community"></i>
-					<h4>Access to a community of like-minded students</h4>
-				</div><!--col-->				
-
-				<div class="col-sm-2">
-					<i class="ci ci-instructor"></i>
-					<h4>Direct access to the instructor</h4>
-				</div><!--col-->
-
-				<div class="col-sm-2">
-					<i class="ci ci-device"></i>
-					<h4>Accessible content on your mobile devices</h4>
-				</div><!--col-->
+				<?php endwhile; ?>
 
 			</div><!--row-->
 		</div><!--container-->
