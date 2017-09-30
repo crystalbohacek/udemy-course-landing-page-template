@@ -284,64 +284,34 @@ get_header(); ?>
 				<div class="col-sm-8 col-sm-offset-2">
 					<h2>What Students Are Saying</h2>
 
-					<!-- TESTIMONIAL 1 -->
+					<!-- loop through the testimonals -->
 
-					<div class="row testimonial">
-						<div class="col-sm-4">
-							<img class="svg-avatar" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/jeanne.svg" alt="illustration of a woman">
-						</div><!--end col-->
-						<div class="col-sm-8">
-							<blockquote>“I tried to launch my book a year ago on my own, and lost over $2,000 in advertising costs. After enrolling in Bestseller Bootcamp, I relaunched my book with a clear, more direct strategy that got me to #1 on Amazon in less than 4 days. I can't recommend this course enough!”
-								<cite>&mdash; Jeanne B.</cite>
-							</blockquote>
-						</div><!--end col-->
-					</div><!--row-->
+					<?php $loop = new WP_Query( array(
+									'post_type' => 'testimonial',
+									'orderby' => 'post_id',
+									'order' => 'ASC' 
+									) ); ?>
 
+					<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-					<!-- TESTIMONIAL 2-->
+						<div class="row testimonial">
+							<div class="col-sm-4">
 
-					<div class="row testimonial">
-						<div class="col-sm-4">
-							<img class="svg-avatar" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/willie.svg" alt="illustration of a man">
-						</div><!--end col-->
-						<div class="col-sm-8">
-							<blockquote>Though I have read countless documents, and completed several courses on this topic, “How To Become a Bestselling Author on Amazon Kindle”, provided me with a wealth of new insights. Tom’s approach was engaging, clear and thorough. Also included, were valuable documents and hyperlinks, to further assist learners at all expertise levels on their journey of discovery. The ongoing course updates, Facebook page and promotions are impressive. I recommend this course highly.
-								<cite>&mdash; Willie R.</cite>
-							</blockquote>
-						</div><!--end col-->
-					</div><!--row-->
+								<?php 
 
-					<!-- TESTIMONIAL 3-->
+									if(has_post_thumbnail()) { //check for feature image
+										the_post_thumbnail('post-thumbnail', array('class' => 'svg-avatar'));
+									}
+								?>
+							</div><!--end col-->
+							<div class="col-sm-8">
+								<blockquote><?php the_content(); ?>
+									<cite>&mdash; <?php the_title(); ?></cite>
+								</blockquote>
+							</div><!--end col-->
+						</div><!--row-->
 
-					<div class="row testimonial">
-						<div class="col-sm-4">
-							<img class="svg-avatar" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/nicolette.svg" alt="illustration of a woman">
-						</div><!--end col-->
-						<div class="col-sm-8">
-							<blockquote>Tom's course gives you an in depth, step by step look at how you can become a best selling kindle author. He shows you the tricks and tools that you need to take advantage of the different promotions and online resources out there to make your ebook a success. I recommend this course for both newbie and seasoned Amazon authors because there is sure to be something for you to learn in this very informative course.
-								<cite>&mdash; Nicolette E.</cite>
-							</blockquote>
-						</div><!--end col-->
-					</div><!--row-->
-
-					<!-- TESTIMONIAL 4-->
-
-					<div class="row testimonial">
-						<div class="col-sm-4">
-							<img class="svg-avatar" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ammar.svg" alt="illustration of man with a beard">
-						</div><!--end col-->
-						<div class="col-sm-8">
-							<blockquote>
-								<p>There are some things in life that are worth spending time on. This course is one. Tom's genuinely cares for the learner and that is what makes this course great.</p>
-
-								<p>Clear guidelines and instructions, frank do's and dont's, uplifting motivation and an earthy way of Tom teaching and coaxing and coaching all in one. His passion for what he does and what he is, is visible in his enthusiasm.</p>
-
-								<p>I highly recommend this course for everyone who wants to publish their work and have no clue as to how to go about it.</p>
-
-								<cite>&mdash; Ammar F.</cite>
-							</blockquote>
-						</div><!--end col-->
-					</div><!--row-->
+					<?php endwhile; ?>
 
 				</div><!--end col-->
 			</div><!--row-->
