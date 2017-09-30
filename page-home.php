@@ -37,7 +37,13 @@ $project_features_body		= get_field('project_features_body');
 $video_section_title		= get_field('video_section_title');
 $video_section_video		= get_field('video_section_video');
 
-
+$instructor_section_title 	= get_field('instructor_section_title');
+$instructor_name			= get_field('instructor_name');
+$instructor_section_excerpt	= get_field('instructor_section_excerpt');
+$instructor_biography		= get_field('instructor_biography');
+$twitter_username			= get_field('twitter_username');
+$facebook_username			= get_field('facebook_username');
+$amazon_username			= get_field('amazon_username');
 
 get_header(); ?>
 
@@ -187,23 +193,30 @@ get_header(); ?>
 				<div class="col-sm-8 col-md-6">
 					<div class="row">
 						<div class="col-lg-8">
-						<h2>Instructor <small>Tom Corson-Knowles</small></h2>
+						<h2><?php echo $instructor_section_title; ?> <small><?php echo $instructor_name; ?></small></h2>
 					
 						</div><!--end col-->
 						<div class="col-lg-4">
-							<a href="https://twitter.com/JuiceTom" target="blank" class="badge social twitter"><i class="fa fa-twitter"></i></a>
-							<a href="https://www.facebook.com/TomCorsonKnowlesFanClub/" target="blank" class="badge social facebook"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.amazon.com/Tom-Corson-Knowles/e/B008QHU66C" target="blank" class="badge social amazon"><i class="fa fa-amazon"></i></a>
+
+							<?php if(!empty($twitter_username)) : ?>
+
+								<a href="https://twitter.com/<?php echo $twitter_username ?>" target="blank" class="badge social twitter"><i class="fa fa-twitter"></i></a>
+
+							<?php endif; ?>
+
+							<?php if(!empty($facebook_username)) : ?>
+								<a href="https://www.facebook.com/<?php echo $facebook_username; ?>/" target="blank" class="badge social facebook"><i class="fa fa-facebook"></i></a>
+							<?php endif; ?>
+
+							<?php if(!empty($amazon_username)) : ?>
+								<a href="https://www.amazon.com/<?php echo $amazon_username; ?>" target="blank" class="badge social amazon"><i class="fa fa-amazon"></i></a>
+							<?php endif; ?>
 						</div><!--end col-->
 					</div><!--row-->
 
-					<p class="lead">Tom Corson-Knowles is an entrepreneur, blogger and international bestselling author of more than 20 books. By the time he graduated from Indiana University Kelley School of Business at age 22, he was earning a full-time income from his first successful business which he started in his dorm room.</p>
+					<p class="lead"><?php echo $instructor_section_excerpt; ?></p>
 
-					<p>Tom then decided to share the keys to success he learned along his journey to becoming a financially independent entrepreneur through his books, educational video courses, and seminars. Today, he teaches new and established authors and writers how to earn a full-time income by becoming successful writers, publishers and marketers.</p>
-
-					<p>Tom is the author of more than 20 bestselling books including The Kindle Publishing Bible, Schedule Your Success, Rules of the Rich, and Email Marketing Mastery.</p>
-
-					<p>Tom is also the founder of TCK Publishing, an independent publishing company that specializes in online marketing.</p>
+					<p><?php echo $instructor_biography; ?></p>
 
 				</div><!--end col-->
 				<div class="col-sm-4 col-md-6">
