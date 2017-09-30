@@ -31,6 +31,13 @@ $skills_section_body		= get_field('skills_section_body');
 $features_section_image		= get_field('features_section_image');
 $features_section_title		= get_field('features_section_title');
 
+$project_features_title 	= get_field('project_features_title');
+$project_features_body		= get_field('project_features_body');
+
+$video_section_title		= get_field('video_section_title');
+$video_section_video		= get_field('video_section_video');
+
+
 
 get_header(); ?>
 
@@ -154,7 +161,11 @@ get_header(); ?>
 
 			<div class="row">
 
-				<?php $loop = new WP_Query( array( 'post_type' => 'course_feature', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+				<?php $loop = new WP_Query( array(
+												'post_type' => 'course_feature',
+												'orderby' => 'post_id',
+												'order' => 'ASC' 
+												) ); ?>
 
 				<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
@@ -205,30 +216,35 @@ get_header(); ?>
 	</section><!--instructor-->
 
 
-	<!-- PROJECT FEATURES -->
+	<!-- FINAL PROJECT FEATURES -->
 	<section id="project-features">
 		<div class="container">
-			<h2>Final Project Features</h2>
-			<p class="lead">Throughout this entire course, you work towards creating your first eBook that will be ready for publishing on the Amazon Kindle marketplace. This process will take you from start to finish so that you can start seeing royalties by the time you are done. </p>
+			<h2><?php echo $project_features_title; ?></h2>
+			<p class="lead"><?php echo $project_features_body; ?></p>
 
 			<div class="row">
-				<div class="col-sm-4">
-					<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pencil.svg" alt="Write">
-					<h3>Clear &amp; Expressive Writing</h3>
-					<p>You will learn how to write in a way that draws in the audience and keeps them hooked.</p>
-				</div><!-- end col -->
+				<?php $loop = new WP_Query( array(
+								'post_type' => 'project_feature',
+								'orderby' => 'post_id',
+								'order' => 'ASC' 
+								) ); ?>
 
-				<div class="col-sm-4">
-					<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-laptop.svg" alt="Design">
-					<h3>Killer Cover Design</h3>
-					<p>Create captivating book cover from start to finish using simple tools.</p>
-				</div><!-- end col -->
+				<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-				<div class="col-sm-4">
-					<img class="svg-header" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-ebook.svg" alt="Publish">
-					<h3>Published on Kindle</h3>
-					<p>You will be guided through the process of getting your book on the Kindle Marketplace.</p>
-				</div><!-- end col -->
+					<div class="col-sm-4">
+					<?php 
+						if( has_post_thumbnail() ) {
+							the_post_thumbnail('post-thumbnail', array('class' => 'svg-header'));
+						}
+					?>
+						<h3><?php the_title(); ?></h3>
+						<p><?php the_content(); ?></p>
+					</div><!-- end col -->
+
+				<?php endwhile; ?>
+
+
+
 
 			</div><!-- row -->
 		</div><!--container-->
@@ -239,8 +255,10 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h2>Watch the Course Introduction</h2>
-					<div style="position:relative;height:0;padding-bottom:56.25%">					<iframe width="100%" height="415" src="https://www.youtube.com/embed/vWgYYGWOD6Q" frameborder="0" allowfullscreen></iframe></div>
+					<h2><?php echo $video_section_title; ?></h2>
+					<div style="position:relative;height:0;padding-bottom:56.25%">					
+						<?php echo $video_section_video ?>
+					</div>
 				</div>
 			</div>
 		</div>
