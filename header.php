@@ -10,7 +10,7 @@
  */
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -29,7 +29,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -44,7 +43,7 @@
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle Navigation</span>
+							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -54,11 +53,13 @@
 
 					<?php
 						wp_nav_menu( array(
+							
 							'theme_location'	=> 'primary',
-							'container' 		=> 'nav',
+							'container'			=> 'nav',
 							'container_class'	=> 'navbar-collapse collapse',
 							'menu_class'		=> 'nav navbar-nav navbar-right'
-						));
+							
+						) );
 					?>
 				</div><!-- container -->
 			</div><!-- navbar -->

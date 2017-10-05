@@ -823,7 +823,7 @@ footer li.signup-link a:hover {
 	font-size: 20px;
 }
 
-.post-image {
+.post-image img {
 	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/blog-image.jpg') no-repeat;
 	background-size: cover;
 	min-height: 320px;
