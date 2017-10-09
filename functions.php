@@ -199,4 +199,77 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+/**
+ * Adds I need help to... widget
+ */
+
+function wpb_load_widget() {
+	register_widget( 'aey_cat_links_widget' );
+}
+
+add_action( 'widgets_init', 'wpb_load_widget' );
+ 
+class aey_cat_links_widget extends WP_Widget {
+ 	function __construct() {
+		parent::__construct(
+	 		'aey_cat_links_widget', 
+	 		__('Category Links Widget', 'aey_cat_links_widget_domain'), 
+			array( 'description' => __( 'Links to categories.', 'aey_cat_links_widget_domain' ), ) 
+		);
+	}
+	
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		echo $args['before_widget'];
+		if ( ! empty( $title ) ){
+			echo $args['before_title'] . $title . $args['after_title'];
+		} 
+		// This is where you run the code and display the output
+		$widget_html = '
+			<h4><?php ' . $this->get_field_id( 'title' ) . '</h4>
+			<div class="row help-section">
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-play-circle"></i><p>Get Started</p></a>
+					</div>
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-pencil"></i><p>Write Better</p></a>
+					</div>
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-clock-o"></i><p>Be Productive</p></a>
+					</div>
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-money"></i><p>Make Money</p></a>
+					</div>
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-magic"></i><p>Publish Online</p></a>
+					</div>
+					<div class="col-md-6">
+						<a href="/"><i class="fa fa-users"></i><p>Build Audience</p></a>
+					</div>
+			</div><!--row-->';
+		echo __( $widget_html, 'aey_cat_links_widget_domain' );
+		echo $args['after_widget'];
+	}
+         
+   	public function form( $instance ) {
+		if ( isset( $instance[ 'title' ] ) ) {
+		$title = $instance[ 'title' ];
+	}
+	else {
+		$title = __( 'New title', 'aey_cat_links_widget_domain' );
+	} ?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+	<?php }
+     
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		return $instance;
+		}
+	}
+
+
 

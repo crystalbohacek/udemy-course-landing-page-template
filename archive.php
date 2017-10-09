@@ -9,18 +9,31 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
+				<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">	
+				<h1 class="page-title">
+
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-			</header><!-- .page-header -->
+
+				<?php
+					// Show an optional term description.
+					$term_description = term_description();
+					if ( ! empty( $term_description ) ) :
+						printf( '<small class="taxonomy-description">%s</small>', $term_description );
+					endif;
+				?>
+
+				</h1>		
+				</section>		
+
+			<div class="container">
+				<div id="primary" class="row">
+					<main id="content" class="col-sm-8">
 
 			<?php
 			/* Start the Loop */
@@ -43,9 +56,16 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				</main><!--#content-->
 
-<?php
-get_sidebar();
-get_footer();
+				<!--SIDEBAR-->
+				<aside class="col-sm-4">				
+					<?php get_sidebar(); ?>
+				</aside>
+
+			</div><!--#primary-->
+		</div><!--.container-->
+
+
+
+<?php get_footer(); ?>
