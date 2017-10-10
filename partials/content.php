@@ -40,5 +40,4 @@
 				<?php the_excerpt(); ?>
 			</div><!--post-excerpt-->
 
-
 </article><!-- #post-<?php the_ID(); ?> -->

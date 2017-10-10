@@ -9,22 +9,35 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+		<div class="post-image">
+		</div><!--post image-->
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php bestsellerbootcamp_posted_on(); ?>
-		</div><!-- .entry-meta -->
+
+			<div class="post-details">
+				<span class="date"><time><?php the_date(); ?></time></span>
+				<span class="author"><?php the_author(); ?></span>
+				<span class="comments"><a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></span>
+			</div><!--post-details-->
+
+			<?php edit_post_link( 'Edit', '<i class="fa fa-pencil"></i>', ''); ?>
+
 		<?php endif; ?>
+
+		<?php if ( is_singular() ) :
+			the_title( '<h3 class="entry-title">', '</h3>' );
+		else :
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+		endif; 
+
+		?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+			<div class="post-excerpt">
+				<?php the_excerpt(); ?>
+			</div><!--post-excerpt-->
 
-	<footer class="entry-footer">
-		<?php bestsellerbootcamp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
