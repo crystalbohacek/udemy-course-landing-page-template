@@ -40,6 +40,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Menus
 --------------------------------------------------------------*/
 
+.navbar-nav > li.current_page_item a,
+.navbar-nav > li.current_page_parent a {
+	color: white;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1020,6 +1025,10 @@ footer li.signup-link a:hover {
 	margin: 0 auto;
 }
 
+.contact-input-group {
+	margin-top: -10px;
+}
+
 /* === FORMS === */
 
 label {
@@ -1081,6 +1090,10 @@ i.ci {
 		height: 240px;
 	}
 
+	.contact-form {
+	width: 100%;
+	}
+
 }
 
 @media screen and ( max-width: 767px ) {
@@ -1110,6 +1123,10 @@ i.ci {
 @media screen and ( max-width: 600px ) {
 	.logged-in .navbar-fixed-top {
 		top: 42px;
+	}
+
+	.contact-form {
+	width: 80%;
 	}
 }
 
