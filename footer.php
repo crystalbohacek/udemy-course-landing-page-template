@@ -39,21 +39,21 @@
 	<footer>
 		<div class="container">
 			<div class="col-sm-3">
-				<a href="/"><span class="hidden-sm hidden-xs">Bestseller Bootcamp</span></a>
+				<a href="/"><span class="hidden-xs"><?php echo bloginfo('name'); ?></span></a>
 			</div><!--end col-->
 			<div class="col-sm-6">
-				<nav>
-					<ul class="list-unstyled list-inline">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Resources</a></li>
-						<li><a href="#">Contact</a></li>
-						<li class="signup-link"><a href="#">Signup Now</a></li>
-					</ul>
-				</nav>
+				<?php
+					wp_nav_menu( array(
+						
+						'theme_location'	=> 'footer',
+						'container'			=> 'nav',
+						'menu_class'		=> 'list-unstyled list-inline'
+						
+					) );
+				?>
 			</div><!--end col-->
 			<div class="col-sm-3">
-				<p class="pull-right">&copy; 2017</p>
+				<p class="pull-right hidden-xs">&copy; <?php echo date('Y'); ?></p>
 
 			</div><!--col-->
 		</div><!--container -->

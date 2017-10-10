@@ -6,14 +6,14 @@
  *
  * @package Bestseller_Bootcamp
  */
-
+	$thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 ?>
 
 <article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-		<div class="post-image">
-		</div><!--post image-->
+		<div class="post-image" style="background:url('<?php echo $thumbnail_url ?>') no-repeat; background-size: cover; min-height: 320px;">
+		</div>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 
