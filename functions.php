@@ -229,32 +229,37 @@ class aey_cat_links_widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		echo $args['before_widget'];
-		if ( ! empty( $title ) ){
-			echo $args['before_title'] . $title . $args['after_title'];
-		} 
 		// This is where you run the code and display the output
 		$widget_html = '
-			<h4><?php ' . $this->get_field_id( 'title' ) . '</h4>
+			<h4>' . $title . '</h4>
 			<div class="row help-section">
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-play-circle"></i><p>Get Started</p></a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-pencil"></i><p>Write Better</p></a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-clock-o"></i><p>Be Productive</p></a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-money"></i><p>Make Money</p></a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-magic"></i><p>Publish Online</p></a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<a href="/"><i class="fa fa-users"></i><p>Build Audience</p></a>
 					</div>
-			</div><!--row-->';
+			</div><!--row-->
+			<div class="row">
+				<div class="col-md-12 sidebar-search">
+					<form role="form" action="' . get_bloginfo('url') . '" class="search-form">
+						<label for="sidebar-search" class="sr-only">Search the blog</label>
+						<input type="text" id="sidebar-search" name="s" placeholder="Search the blog">
+					</form>
+				</div>
+			</div>';
 		echo __( $widget_html, 'aey_cat_links_widget_domain' );
 		echo $args['after_widget'];
 	}

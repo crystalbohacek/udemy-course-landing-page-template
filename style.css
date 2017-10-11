@@ -1004,7 +1004,7 @@ footer li.signup-link a:hover {
 	border-top: solid 1px #eee;
 }
 
-/* Wordpress Comment Styles */
+/* WORDPRESS COMMENT STYLES */
 
 #comments footer.comment-meta {
 	background: none;
@@ -1044,7 +1044,7 @@ footer li.signup-link a:hover {
 	margin-top: -20px;
 }
 
-/* 404 page */
+/* == 404 PAGE == */
 
 .not-found {
 	margin-top: 7em;
@@ -1076,6 +1076,19 @@ textarea {
 	padding: 6px 12px;
 }
 
+/* == FORM STYLES == */
+
+div.wpcf7-response-output {
+	margin-left: -11px;
+	background-color: #d3d3d3;
+	border: 10px solid #d3d3d3;
+}
+
+@media screen and (max-width: 767px) {
+	div.wpcf7-response-output {
+		margin-left: -5px;
+	}
+}
 
 /*=== CUSTOM ICON SPRITES ===*/
 
