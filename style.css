@@ -363,7 +363,13 @@ body {
 	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/tile.jpg') top left repeat;
 }
 
-.navbar-fixed-top {
+@media (max-width:782px){
+	body.logged-in {
+		margin-top: 35px;
+	}
+}
+
+body.logged-in .navbar-fixed-top {
 	top: 32px;
 }
 
@@ -454,6 +460,15 @@ button.btn:focus {
 
 img {
 	max-width: 100%;
+}
+
+#signup input {
+	border-radius: 0 !important;
+}
+
+input.wpcf7-form-control.wpcf7-submit.btn,
+#signup input.btn.submit.btn-danger {
+	padding: 7px 13px !important;
 }
 
 // .modal-content {

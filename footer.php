@@ -24,12 +24,11 @@
 					<p>Sign up for our mailing list and we’ll show you what Bestseller Bootcamp can do to help change your career. We will never spam you.</p>
 				</div><!--end col-->
 			  <div class="col-sm-4 col-sm-offset-4">
-			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Enter Your Email">
-			      <span class="input-group-btn">
-			        <button class="btn btn-danger" type="button"><i class="fa fa-angle-right"></i></button>
-			      </span><!--input-group-btn-->
-			    </div><!-- /input-group -->
+					<?php 
+						$post = get_page_by_path('newsletter-signup'); 
+						$content = apply_filters('the_content', $post->post_content); 
+						echo $content;
+					?>
 			  </div><!-- /.col-sm-4 -->
 			</div><!-- /.row -->			
 		</div><!--container-->

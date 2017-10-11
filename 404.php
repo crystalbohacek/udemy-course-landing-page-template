@@ -17,7 +17,7 @@ get_header(); ?>
 		<div id="primary " class="row">
 				<div class="section-header">
 						<h2>Sorry, we can't find the page you were looking for.</h2>
-						<a href="index.php" class="btn btn-success">Bestseller Bootcamp Home</a>
+						<a href="<?php bloginfo('url'); ?>" class="btn btn-success"><?php bloginfo('name'); ?> Home</a>
 				</div><!--.section-header-->
 		</div><!--#primary-->
 	</div><!--.container-->
