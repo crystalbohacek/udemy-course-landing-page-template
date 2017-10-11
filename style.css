@@ -462,15 +462,6 @@ img {
 	max-width: 100%;
 }
 
-#signup input {
-	border-radius: 0 !important;
-}
-
-input.wpcf7-form-control.wpcf7-submit.btn,
-#signup input.btn.submit.btn-danger {
-	padding: 7px 13px !important;
-}
-
 // .modal-content {
 // 	background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
 // }
@@ -543,6 +534,7 @@ blockquote:before {
 }
 
 .logo {
+	min-width: 15px;
 	max-width: 28px;
 }
 
@@ -726,10 +718,6 @@ section h3 {
 	color: #444;
 }
 
-// #signup .btn {
-// 	background-color: #ff5a5f;
-// }
-
 .form-control:focus {
   border-color: #888;
   -webkit-box-shadow: none;
@@ -789,6 +777,21 @@ footer li.signup-link a {
 footer li.signup-link a:hover {
 	font-weight: bold;
 }
+
+/*==SIGNUP SECTION==*/
+
+
+#signup input {
+	border-radius: 0 !important;
+	margin-right: -20px;
+}
+
+input.wpcf7-form-control.wpcf7-submit.btn,
+#signup input.btn.submit.btn-danger {
+	padding: 7px 13px !important;
+}
+
+
 
 /*== BLOG STYLES ==*/
 
@@ -1079,16 +1082,11 @@ textarea {
 /* == FORM STYLES == */
 
 div.wpcf7-response-output {
-	margin-left: -11px;
 	background-color: #d3d3d3;
 	border: 10px solid #d3d3d3;
 }
 
-@media screen and (max-width: 767px) {
-	div.wpcf7-response-output {
-		margin-left: -5px;
-	}
-}
+
 
 /*=== CUSTOM ICON SPRITES ===*/
 
@@ -1134,7 +1132,6 @@ i.ci {
 @media screen and ( max-width: 767px ) {
 
 	#instructor img {
-		//padding-top: 2em;
 		border-radius: 0;
 		display: block;
 		margin: 1.5em auto;

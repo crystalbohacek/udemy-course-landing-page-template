@@ -17,13 +17,13 @@
 	<section id="signup" data-type="background" data-speed="4">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-10 col-sm-offset-1">
 					<h3>Become a published author in 4 weeks and earn $1k+ per month.</h3>
 				</div><!--end col-->
-				<div class="col-sm-6 col-sm-offset-3">
+				<div class="col-sm-8 col-sm-offset-2">
 					<p>Sign up for our mailing list and we’ll show you what Bestseller Bootcamp can do to help change your career. We will never spam you.</p>
 				</div><!--end col-->
-			  <div class="col-sm-4 col-sm-offset-4">
+			  <div class="col-sm-6 col-sm-offset-3 footer-searchbar">
 					<?php 
 						$post = get_page_by_path('newsletter-signup'); 
 						$content = apply_filters('the_content', $post->post_content); 
