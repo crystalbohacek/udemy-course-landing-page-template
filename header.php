@@ -48,7 +48,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.svg" class="logo" alt="Bestseller Bootcamp"><span class="hidden-xs">Bestseller Bootcamp</span></a>
+						<a class="navbar-brand" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.svg" class="logo" alt="Bestseller Bootcamp"><span class="hidden-xs">Bestseller Bootcamp</span></a>
 					</div><!--navbar header-->
 
 					<?php
