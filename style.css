@@ -360,7 +360,7 @@ body {
 	margin-top: 50px;
 	font-family: 'Raleway', Helvetica, sans-serif;
 	font-size: 16px;
-	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/tile.jpg') top left repeat;
+	background: url('assets/img/tile.jpg') top left repeat;
 }
 
 @media (max-width:782px){
@@ -515,7 +515,7 @@ blockquote:before {
 /* == HERO == */
 
 #hero {
-	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/hero-bg.png') 50% 0 repeat fixed;
+	background: url('assets/img/hero-bg.png') 50% 0 repeat fixed;
 	min-height: 500px;
 	padding: 40px 0;
 	color: white;
@@ -807,7 +807,7 @@ input.wpcf7-form-control.wpcf7-submit.btn,
 }
 
 .feature-image-default-alt {
-	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/hero-bg.png') no-repeat;
+	background: url('assets/img/hero-bg.png') no-repeat;
 	background-size: cover;
 }
 
@@ -848,7 +848,7 @@ input.wpcf7-form-control.wpcf7-submit.btn,
 }
 
 .post-image img {
-	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/blog-image.jpg') no-repeat;
+	background: url('assets/img/blog-image.jpg') no-repeat;
 	background-size: cover;
 	min-height: 320px;
 }
@@ -1095,7 +1095,7 @@ i.ci {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background: url('/bestseller-bootcamp/wp-content/themes/bestsellerbootcamp/assets/img/icon-sprite.png') no-repeat;
+	background: url('assets/img/icon-sprite.png') no-repeat;
 }
 
 .ci.ci-computer		{ background-position: 0 0; }
